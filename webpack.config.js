@@ -1,5 +1,9 @@
+var path = require('path');
+
+
 module.exports = {
-    entry: "./js/app.js",
+    entry: "./index",
+    context: path.resolve(__dirname, '.'),
     output: {
         path: __dirname + '/build',
         filename: "bundle.js"
@@ -8,7 +12,7 @@ module.exports = {
         loaders: [
             { 
                 test: /\.js?$/, 
-                loaders: ['react-hot', 'babel?presets[]=es2015&presets[]=react'], 
+                loaders: ['react-hot', 'babel?presets[]=react&presets[]=es2015&presets[]=stage-0'], 
                 exclude: /node_modules/ 
             },
             { 
@@ -22,4 +26,12 @@ module.exports = {
             }
         ]
     },
+    progress: true,
+    resolve: {
+    modulesDirectories: [
+      'src',
+      'node_modules'
+    ],
+    extensions: ['', '.json', '.js', '.jsx']
+  },
 };
