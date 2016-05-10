@@ -16,34 +16,34 @@ class Header extends React.Component {
 
   render() {
     let { todos, dispatch } = this.props
-  
+
     return (
       <div>
         <Link to="companies" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Companies</Link>
-        <Link to="people" className="link"onClick={e => {
+        <Link to="people" className="link" onClick={e => {
             dispatch(loadPage())
         }}>People</Link>
-        <Link to="products" className="link"onClick={e => {
+        <Link to="products" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Products</Link>
-        <Link to="jobs" className="link"onClick={e => {
+        <Link to="jobs" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Jobs</Link>
-        <Link to="price_history" className="link"onClick={e => {
+        <Link to="price_history" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Price History</Link>
-        <Link to="job_proucts" className="link"onClick={e => {
+        <Link to="job_proucts" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Job Products</Link>
-        <Link to="warehouse" className="link"onClick={e => {
+        <Link to="warehouse" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Warehouse</Link>
-        <Link to="log" className="link"onClick={e => {
+        <Link to="log" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Log</Link>
-        <Link to="settings" className="link"onClick={e => {
+        <Link to="settings" className="link" onClick={e => {
             dispatch(loadPage())
         }}>Settings</Link>
       </div>

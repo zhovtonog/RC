@@ -5,8 +5,9 @@ module.exports = {
     entry: "./index",
     context: path.resolve(__dirname, '.'),
     output: {
-        path: __dirname + '/build',
-        filename: "bundle.js"
+        path: path.join(__dirname, 'build'),
+        filename: 'bundle.js',
+        publicPath: '/build/'
     },
     externals: {
       jsPDF: "jsPDF"
