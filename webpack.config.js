@@ -8,21 +8,24 @@ module.exports = {
         path: __dirname + '/build',
         filename: "bundle.js"
     },
+    externals: {
+      jsPDF: "jsPDF"
+    },
     module: {
         loaders: [
-            { 
-                test: /\.js?$/, 
-                loaders: ['react-hot', 'babel?presets[]=react&presets[]=es2015&presets[]=stage-0'], 
-                exclude: /node_modules/ 
+            {
+                test: /\.js?$/,
+                loaders: ['react-hot', 'babel?presets[]=react&presets[]=es2015&presets[]=stage-0'],
+                exclude: /node_modules/
             },
-            { 
-                test: /\.js$/, 
-                exclude: /node_modules/, 
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
                 loader: 'babel?presets[]=es2015&presets[]=react'
             },
-            { 
+            {
                 test: /\.css$/,
-                loader: "style!css" 
+                loader: "style!css"
             }
         ]
     },

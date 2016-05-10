@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { ajax } from 'jquery'
+import $ from 'jquery'
 import { loadCompanies } from 'redux/actions/Actions'
 
 
-import { Header } from 'components'
+import { Header, Footer } from 'components'
+import { PrintPDF } from 'components'
 
 class Companies extends React.Component {
     constructor(props) {
@@ -15,13 +16,13 @@ class Companies extends React.Component {
         let { state, dispatch } = this.props
         console.log(this.props);
         console.log(dispatch);
-        ajax({
+        $.ajax({
             method: "GET",
             url: "/api/companies.json",
             dataType : 'json',
             success : function(data){
                dispatch(loadCompanies(data));
-                
+
             }
         })
     }
@@ -30,11 +31,15 @@ class Companies extends React.Component {
         console.log(companies)
         return (
             <div>
-                <Header/> 
+                <Header/>
+                <PrintPDF/>
                 <div>Companies</div>
-                {companies.map(val => 
-                    <div>{val.Companies}</div>    
+                {companies.map((val, key) =>
+                    <div key={key}>{val.Companies}</div>
                 )}
+
+                <Footer/>
+
             </div>
         )
     }
